@@ -39,7 +39,7 @@ class NormalCourse {
   int getTargetBrightness();
 
  private:
-  //
+  //! コントローラー
   Controller& controller;
   //! エッジがどっちか． trueが左コース，falseが右コース
   bool selectedEdge;
