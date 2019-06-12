@@ -15,7 +15,6 @@ void EtRobocon2019::start()
   bool isRightCourse = calibrator.isLeftCource();
   // 黒と白を足して2で割る．
   int targetBrightness = (calibrator.getWhiteBrightness() + calibrator.getBlackBrightness()) / 2;
-
   // 右ボタンが押されるまで待つ（これを書かないと自動で走り出す．）
   while(!controller.buttonIsPressedRight()) {
   }
