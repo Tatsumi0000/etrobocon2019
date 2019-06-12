@@ -14,15 +14,22 @@ NormalCourse::NormalCourse(Controller& controller_, int targetBrightness_)
 {
 }
 
+/**
+ * 左エッジ，右エッジを切り替える．
+ * @param selectedEdge_ [Leftコースである場合True]
+ */
 void NormalCourse::selectedEdgeLR(bool selectedEdge_)
 {
   selectedEdge = selectedEdge_;
   NormalCourse::runNormalCourse();
 }
 
+/**
+ * 実際にNormalコースを走る．
+ * ここにパラメータを頑張って書く．
+ */
 void NormalCourse::runNormalCourse()
 {
-  // ここにパラメータを頑張って書く．
   // 配列の個数
   constexpr int arraySize = 2;
   std::array<PidParameter, arraySize> speedPid = { { { 0.1, 0.0, 0.0 }, { 0.1, 0.01, 0.0 } } };
@@ -38,11 +45,17 @@ void NormalCourse::runNormalCourse()
   }
 }
 
+/**
+ * 現在のselectedEdge（エッジ）を返すゲッター
+ */
 bool NormalCourse::getSelectedEdge()
 {
   return selectedEdge;
 }
 
+/**
+ * targetBrightness（カラーセンサの目標値）を返すゲッター
+ */
 int NormalCourse::getTargetBrightness()
 {
   return targetBrightness;
