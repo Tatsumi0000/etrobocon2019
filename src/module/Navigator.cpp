@@ -156,7 +156,7 @@ void Navigator::lineTrace(double specifiedDistance, int pwm, double encoderPGain
 void Navigator::lineTraceToSpecifiedColor(Color specifiedColor, int pwm, double lineTracePGain,
                                           bool isLeft)
 {
-  constexpr int resolution = 3;
+  constexpr int resolution = 6;
   LineTracer lineTracer(controller, targetBrightness, isLeft);
   // 循環バッファーを作成する(最初は、noneで埋めておく)
   constexpr int bufferSize = 2 * resolution + 1;
